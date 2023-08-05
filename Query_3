@@ -1,0 +1,27 @@
+-- How was the percentage of growth of the amount of visitors week over week for the last four weeks of the data?
+WITH 	visitors AS 	(						
+  				SELECT 	
+  					DATE_TRUNC('week', TO_DATE(left(r.visit_datetime, 10), 'DD/MM/YYYY')) AS visit_date_week
+  					, SUM(r.reserve_visitors) AS visitors_per_week
+  				FROM restaurants_visitors r
+  				GROUP BY 1
+  				ORDER BY 1
+			),
+ 
+     	wow AS		(
+                        		SELECT 
+					v.*
+    					, (v.visitors_per_week - LAG(v.visitors_per_week, 1) OVER(ORDER by v.visit_date_week))/LAG(v.visitors_per_week, 1) 
+OVER(ORDER by v.visit_date_week)::decimal as wow_growth_change
+				FROM visitors v
+			)
+ 
+SELECT 
+	w.*
+FROM wow w
+WHERE w.visit_date_week + INTERVAL '3 WEEK' >= 
+(
+	SELECT MAX(DATE_TRUNC('week', TO_DATE(left(r.visit_datetime, 10), 'DD/MM/YYYY'))) AS max_visit_date_week
+  	FROM restaurants_visitors r
+) 
+
