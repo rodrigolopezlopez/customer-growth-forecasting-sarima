@@ -1,0 +1,22 @@
+-- Which day of the week there are usually more visitors on average in restaurants?
+WITH 	visitors 	AS 	(
+				SELECT 	
+  					TO_DATE(left(r.visit_datetime, 10), 'DD/MM/YYYY') AS visit_date
+  					, r.id
+  					, r.reserve_visitors 
+  				FROM restaurants_visitors r
+			), 
+                    
+	day_of_week AS 	(
+                    		SELECT 
+          				d.day_of_week
+          				, AVG(v.reserve_visitors) as average_number_visitors
+                      		FROM visitors v
+                      		JOIN date_info d ON v.visit_date = DATE(d.calendar_date)
+          			GROUP BY 1
+                    	)
+
+SELECT *
+FROM day_of_week
+ORDER BY 2 DESC
+
