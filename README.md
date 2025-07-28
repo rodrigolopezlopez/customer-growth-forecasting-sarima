@@ -41,19 +41,6 @@ This phase combined Exploratory Data Analysis (EDA) and Data Wrangling. Initial 
 
 A SARIMA model was chosen for forecasting, leveraging observed seasonality. Data was split into training/test sets. `pmdarima.auto_arima` identified optimal parameters, using a seasonal period (m=7). The model generated 31-day predictions, with a MAPE of **459.21%**.
 
-### Visualizations:
-
-*(Here, you would embed your plots. Examples of how you might include them:)*
-
-**Aggregated Visitor Time Series:**
-![Aggregated Visitor Time Series](path/to/your/aggregated_visitors_plot.png)
-
-**Visitor Behavior by Month:**
-![Visitor Behavior by Month](path/to/your/monthly_boxplot.png)
-
-**Actual vs. Predicted Visitors:**
-![Actual vs. Predicted Visitors](path/to/your/actual_vs_predicted_plot.png)
-
 ## Results & Future Work
 
 The SARIMA model's high MAPE (459.21%) indicates limitations, emphasizing iterative development. Future work will focus on:
