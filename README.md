@@ -2,19 +2,6 @@
 
 This repository contains a Jupyter Notebook (`customer-growth-forecasting-sarima.ipynb`) demonstrating a time series forecasting project. The primary goal is to predict future customer growth (visitor reservations) for restaurants using historical data and a Seasonal Autoregressive Integrated Moving Average (SARIMA) model.
 
-## Table of Contents
-
-1.  [Project Overview](#project-overview)
-2.  [Key Highlights](#key-highlights)
-3.  [Dataset](#dataset)
-4.  [Data Analysis & Preprocessing](#data-analysis--preprocessing)
-5.  [Forecasting Model (SARIMA)](#forecasting-model-sarima)
-6.  [Results & Future Work](#results--future-work)
-7.  [Requirements](#requirements)
-8.  [Usage](#usage)
-9.  [Contributing](#contributing)
-10. [License](#license)
-
 ## Project Overview
 
 This project forecasts restaurant visitor numbers using historical data and a SARIMA model. Key steps include data loading, cleaning, time series analysis (seasonality), model implementation, and performance evaluation (MAPE).
