@@ -49,18 +49,7 @@ The SARIMA model's high MAPE (459.21%) indicates limitations, emphasizing iterat
 * **Model Exploration**: Investigate alternative models like Prophet, ETS, or ML models (XGBoost, LSTMs) if needed.
 This demonstrates a strong analytical mindset crucial for tackling real-world forecasting challenges.
 
-## Requirements
+## Relevant Graphs
 
-To run this notebook, you will need the following Python libraries:
+<img width="1005" height="634" alt="image" src="https://github.com/user-attachments/assets/f533c2d3-cb23-47a6-814f-4060c4ffbf25" />
 
-* `numpy`
-* `pandas`
-* `matplotlib`
-* `seaborn`
-* `pmdarima`
-* `statsmodels`
-
-Install them using pip:
-
-```bash
-pip install numpy pandas matplotlib seaborn pmdarima statsmodels
