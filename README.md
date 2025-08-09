@@ -1,42 +1,48 @@
 # Customer Growth Forecasting using SARIMA
 
-This repository contains a Jupyter Notebook (`customer-growth-forecasting-sarima.ipynb`) demonstrating a time series forecasting project. The primary goal is to predict future customer growth (visitor reservations) for restaurants using historical data and a Seasonal Autoregressive Integrated Moving Average (SARIMA) model.
+This project demonstrates a time series forecasting pipeline to predict future customer reservations for restaurants. Using historical reservation data, a **Seasonal Autoregressive Integrated Moving Average (SARIMA)** model was developed to forecast visitor numbers, providing actionable insights for business planning.
 
-## Project Overview
+---
 
-This project forecasts restaurant visitor numbers using historical data and a SARIMA model. Key steps include data loading, cleaning, time series analysis (seasonality), model implementation, and performance evaluation (MAPE).
+### 🎯 **Project Goal & Key Highlights**
 
-## Key Highlights
+The primary goal of this project was to forecast future customer growth (visitor reservations) for restaurants. This project showcases proficiency in the following areas:
 
-* **Comprehensive Data Handling**: Demonstrated proficiency in loading, cleaning, and transforming raw data from multiple sources for time series analysis.
-* **Time Series Analysis**: Identified and visualized seasonal patterns (weekly/monthly) in customer visitation data.
-* **Predictive Modeling**: Applied a SARIMA model for forecasting, showcasing understanding time series techniques.
-* **Critical Evaluation & Problem Solving**: Thoroughly evaluated model performance (MAPE) and proposed actionable next steps for improvement, highlighting analytical rigor and strategic thinking.
+* **Comprehensive Data Handling**: Integrated and cleaned raw data from three separate sources to create a unified time series dataset.
+* **Time Series Analysis**: Identified and visualized **seasonal patterns** (weekly and monthly) in customer visitation data to inform model selection.
+* **Predictive Modeling**: Applied a **SARIMA model** for forecasting, demonstrating an understanding of core time series techniques.
+* **Critical Evaluation & Problem Solving**: Thoroughly evaluated model performance using **MAPE** and proposed actionable next steps for improvement, highlighting analytical rigor and strategic thinking.
 
-## Dataset
+---
 
-Three interconnected datasets are used:
-* `restaurants_visitors.csv`: Visitor reservation details (`reserve_visitors` as target).
-* `store_info.csv`: Restaurant details.
-* `date_info.csv`: Calendar information.
+### 🛠️ **Technical Approach**
 
-## Data Analysis & Preprocessing
+#### **Data Analysis & Preprocessing**
 
-This phase combined Exploratory Data Analysis (EDA) and Data Wrangling. Initial data quality checks addressed a date format error. Outliers in `reserve_visitors` were identified via visualizations. `dayofweek` and `month` features were engineered for seasonality. Visitor data was aggregated into a daily time series, and duplicates removed.
+* **Data Sources**: Consolidated three interconnected datasets, using `reserve_visitors` as the primary target variable.
+* **Data Cleaning**: Addressed initial data quality issues, including a date format error, and handled outliers through visualization.
+* **Feature Engineering**: Engineered `dayofweek` and `month` features to better capture seasonal trends in the data.
 
-## Forecasting Model (SARIMA)
+#### **SARIMA Forecasting Model**
 
-A SARIMA model was chosen for forecasting, leveraging observed seasonality. Data was split into training/test sets. `pmdarima.auto_arima` identified optimal parameters, using a seasonal period (m=7). The model generated 31-day predictions, with a MAPE of **459.21%**.
+* A **SARIMA model** was chosen to leverage the observed seasonality.
+* **Parameter Tuning**: The `pmdarima.auto_arima` library was used to automatically identify the optimal model parameters with a seasonal period (**m=7**).
+* **Forecasting**: The model was trained on historical data and used to generate a **31-day forecast**.
 
-## Results & Future Work
+---
 
-The SARIMA model's high MAPE (459.21%) indicates limitations, emphasizing iterative development. Future work will focus on:
-* **Addressing Data Complexity**: Incorporate multiple seasonalities and external factors (holidays, promotions, weather) via SARIMAX using `genre_name`, `area_name`, and `holiday_flg`.
-* **Enhanced Data Handling**: Implement robust outlier/anomaly handling and advanced feature engineering (lagged values, rolling statistics).
-* **Model Exploration**: Investigate alternative models like Prophet, ETS, or ML models (XGBoost, LSTMs) if needed.
-This demonstrates a strong analytical mindset crucial for tackling real-world forecasting challenges.
+### 📈 **Results & Future Improvements**
 
-## Relevant Graphs
+The initial **SARIMA model** produced a **MAPE of 459.21%**, indicating its limitations with the current data and features. This result highlights the need for an iterative and robust approach to forecasting challenges.
+
+#### **Next Steps to Improve Accuracy:**
+
+* **Multivariate Modeling (SARIMAX)**: Incorporate external variables like **holidays**, **promotions**, and **weather** to capture their impact on reservations.
+* **Enhanced Data Handling**: Implement more sophisticated outlier handling and advanced feature engineering, such as **lagged values** and **rolling statistics**.
+* **Model Exploration**: Investigate alternative forecasting models like **Prophet**, **Gradient Boosting** (e.g., **XGBoost**), or **Neural Networks** (e.g., **LSTMs**) to find a better fit for the data.
+
+---
+
+### **Relevant Graphs**
 
 <img width="1005" height="634" alt="image" src="https://github.com/user-attachments/assets/f533c2d3-cb23-47a6-814f-4060c4ffbf25" />
-
