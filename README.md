@@ -10,7 +10,7 @@ This project forecasts restaurant visitor numbers using historical data and a SA
 
 * **Comprehensive Data Handling**: Demonstrated proficiency in loading, cleaning, and transforming raw data from multiple sources for time series analysis.
 * **Time Series Analysis**: Identified and visualized seasonal patterns (weekly/monthly) in customer visitation data.
-* **Predictive Modeling**: Applied a SARIMA model for forecasting, showcasing understanding of advanced time series techniques.
+* **Predictive Modeling**: Applied a SARIMA model for forecasting, showcasing understanding time series techniques.
 * **Critical Evaluation & Problem Solving**: Thoroughly evaluated model performance (MAPE) and proposed actionable next steps for improvement, highlighting analytical rigor and strategic thinking.
 
 ## Dataset
